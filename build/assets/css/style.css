@@ -1688,49 +1688,51 @@ header .navbar-expand .dropdown:hover > .dropdown-menu {
 }
 
 .progress {
-  position: relative;
-  height: 10px;
-  overflow: visible;
+  /* Ajoutez un style pour le conteneur .progress si besoin */
+  margin-bottom: 1rem; /* Exemple : ajoute de l'espace sous la barre */
 }
-.progress .title {
-  position: absolute;
-  bottom: calc(100% + 8px);
-  left: 0;
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: var(--primary-t-color);
+
+.progress-bar {
+position: relative; /* Nécessaire pour le positionnement absolu du span */
+background-color: var(--primary-t-color);
+border-radius: 10px;
+height: 10px; /* Hauteur fixe (vous pouvez la changer) */
+width: 0%;    /* Largeur initiale - gérée par React */
+opacity: 0;   /* Invisible initialement - géré par React */
+transition: width 0.5s var(--transition-function), opacity 0.5s var(--transition-function); /* Animation sur width et opacity */
+overflow: visible;
 }
-.progress .progress-bar {
-  position: relative;
-  width: 0%;
-  background-color: var(--primary-t-color);
-  border-radius: 10px;
-  opacity: 0;
-  overflow: visible;
-  transition: all var(--transition-function) 0.5s;
+
+/* Classe 'animate' pour déclencher l'animation (ajoutée par React) */
+.progress-bar.animate {
+/* width sera géré dynamiquement */
+opacity: 1; /* Devient visible */
 }
-.progress .progress-bar span {
-  position: absolute;
-  bottom: calc(100% + 14px);
-  right: -20px;
-  padding: 8px 10px;
-  background-color: var(--primary-t-color);
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  transition: 0.5s;
+
+.progress-bar span {
+position: absolute;
+bottom: calc(100% + 14px); /* Ajustez si nécessaire */
+right: -20px; /* Ajustez si nécessaire */
+padding: 8px 10px;
+background-color: var(--primary-t-color);
+border-radius: 6px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 14px;
+/* transition: opacity 0.5s ease-out;  Inutile, l'opacité est gérée par la classe .animate */
+white-space: nowrap; /* Empêche le texte de passer à la ligne */
 }
-.progress .progress-bar span::before {
-  position: absolute;
-  content: "";
-  height: 12px;
-  width: 12px;
-  background-color: var(--primary-t-color);
-  bottom: -6px;
-  left: 50%;
-  transform: translateX(-50%) rotate(45deg);
+
+.progress-bar span::before {
+position: absolute;
+content: "";
+height: 12px;
+width: 12px;
+background-color: var(--primary-t-color);
+bottom: -6px;
+left: 50%;
+transform: translateX(-50%) rotate(45deg);
 }
 
 @keyframes zoom {
