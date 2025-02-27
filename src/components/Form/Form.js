@@ -32,7 +32,8 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    console.log(formData); // Remplacez par votre logique de soumission (fetch, axios, etc.)
+    // ... (votre code pour envoyer les données à un serveur) ...
   };
 
   return (
@@ -64,7 +65,8 @@ const Form = () => {
           </div>
 
           <div className="col-12 col-lg-7 order-first order-md-last mt-sm-4 mt-lg-0">
-            <form id="contact-form" className="contact-form">
+            <form id="contact-form" className="contact-form" onSubmit={handleSubmit}> {/* Ajoutez onSubmit ici */}
+              {/* ... (le reste de votre formulaire, inchangé) ... */}
               <div className="form-floating mb-3">
                 <input
                   type="text"
@@ -193,11 +195,9 @@ const Form = () => {
                 />
                 <label htmlFor="message">Message</label>
               </div>
-				<MagneticButton 
-					href="/#"
-					>
-					Envoyer
-				</MagneticButton>
+                <MagneticButton type="submit">  {/* Ajoutez le type="submit" ici */}
+                     Envoyer
+                </MagneticButton>
             </form>
             <p className="form-message"></p>
           </div>
