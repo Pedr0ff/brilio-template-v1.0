@@ -6,7 +6,7 @@ import Breadcrumb from '../components/Breadcrumb/BreadcrumbOne';
 import Shape from '../components/Shape/Shape';
 import Experiences from '../components/Experiences/Experiences';
 import AnimatedImage from '../components/AnimatedImage/AnimatedImage';
-import Skills from '../components/Skills/Skills';
+//import Skills from '../components/Skills/Skills';
 import FAQ from '../components/FAQ/FAQ';
 import CTA from '../components/CTA/CTAOne';
 import Footer from '../components/Footer/Footer';
@@ -28,7 +28,6 @@ const About = () => {
 					<Shape />
 					<Experiences />
 					<AnimatedImage imageSrc="/img/case-1.jpg" altText="Case Image" />
-					<Skills />
 					<FAQ />
 					<CTA />
 					<Footer />
